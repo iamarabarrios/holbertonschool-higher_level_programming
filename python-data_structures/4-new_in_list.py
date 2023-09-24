@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 def new_in_list(my_list, idx, element):
     other_list = my_list.copy()
 
