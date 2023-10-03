@@ -11,14 +11,10 @@ def text_indentation(text):
     characters_special = ".?:"
 
     for char in text:
+        output += char
         if char in characters_special:
-            if char in characters_special:
-                output += char + "\n\n"
-            else:
-                if char != " ":
-                    output += char
-                    if char == "\n":
-                    continue
-                if char not in characters_special:
-                    output += " "
+            output += "\n\n"
+        elif char == "\n":
+            output = output.rstrip()
+            output += "\n"
     print(output, end="")
