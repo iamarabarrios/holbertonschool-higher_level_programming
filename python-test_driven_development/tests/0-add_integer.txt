@@ -1,6 +1,6 @@
 #IMPORT MODULE#
 
->>> add_integer = __import__("0-add_integer")_add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 Test #1: add two integer
 
@@ -36,3 +36,5 @@ Test #7: Return type value
 
 >>> type(add_integer(5, 5))
 <class 'int'>
+
+
