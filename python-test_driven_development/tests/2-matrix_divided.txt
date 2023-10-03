@@ -4,7 +4,8 @@ def matrix_divided(matrix, div):
     Divide all elements of matrix.
 
     Raises:
-    TypeError: If matrix is not a list of lists, or if its elements are not integers or floats.
+    TypeError: If matrix is not a list of lists, or if its elements are
+    not integers or floats.
     TypeError: If not all rows have the same size.
     TypeError: If div is not a number.
     ZeroDivisionError: If div is 0.
@@ -14,7 +15,7 @@ def matrix_divided(matrix, div):
     [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
     """
 
-    if (not isinstance(matrix, list) or matrix = [] or
+    if (not isinstance(matrix, list) or matrix == [] or
             not all(isinstance(row, list) for row in matrix) or
             not all((isinstance(ele, int) or isinstance(ele, float))
                     for ele in [num for row in matrix for num in row])):

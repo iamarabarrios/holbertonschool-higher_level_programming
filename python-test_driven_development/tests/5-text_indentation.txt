@@ -7,7 +7,8 @@ def text_indentation(text):
     TypeError: If text is not a string.
 
     Examples:
-    >>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo? Utrum igitur tibi?")
+    >>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo?
+    Utrum igitur tibi?")
     Lorem ipsum dolor sit amet.
     """
 
@@ -25,7 +26,7 @@ def text_indentation(text):
                 if char != " ":
                     output += char
                     if char == "\n":
-                    continue
+                        continue
                 if char not in characters_special:
                     output += " "
     print(output, end="")
