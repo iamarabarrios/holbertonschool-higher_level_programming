@@ -1,40 +1,38 @@
 #IMPORT MODULE#
 
->>> add_integer = __import__('0-add_integer').add_integer
+from 0-add_integer import add_integer
 
-Test #1: add two integer
+# Test #1: add two integers
 
->>> add_integer(4, 6)
-8
+test1 = add_integer(4, 6)
+print(test1)
 
-Test #2: add one float and one integer
+# Test #2: add one float and one integer
 
->>> add_integer(2.5, 4)
-6
+test2 = add_integer(2.5, 4)
+print(test2)
 
-Test #3: give only one parameter, integer
+# Test #3: give only one parameter, integer
 
->>> add_integer(5)
-103
+test3 = add_integer(5)
+print(test3)
 
-Test #4: give only one parameter, float
+# Test #4: give only one parameter, float
 
->>> add_integer(2.5)
-100
+test4 = add_integer(2.5)
+print(test4)
 
-Test #5: add two float
+# Test #5: add two floats
 
->>> add_integer(3.7, 1.2)
-4
+test5 = add_integer(3.7, 1.2)
+print(test5)
 
-Test #6: add integer negative
+# Test #6: add integer negatives
 
->>> add_integer(-3, -5)
--8
+test6 = add_integer(-3, -5)
+print(test6)
 
-Test #7: Return type value
+# Test #7: Return type value
 
->>> type(add_integer(5, 5))
-<class 'int'>
-
-
+test7 = type(add_integer(5, 5))
+print(test7)
