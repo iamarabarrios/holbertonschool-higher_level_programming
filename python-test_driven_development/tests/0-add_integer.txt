@@ -1,17 +1,38 @@
-#!/usr/bin/python3
-def add_integer(a, b=98):
-    """
-    Return the sum of a and b
+#IMPORT MODULE#
 
-    Examples:
-    >>> add_integer(1, 2)
-    3
-    >>> add_integer(3, -1)
-    2
-    """
+>>> add_integer = __import__("0-add_integer")_add_integer
 
-    if not isinstance(a,  int) and not isinstance(a, float):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
-        raise TypeError("b must be an integer")
-    return int(a) + int(b)
+Test #1: add two integer
+
+>>> add_integer(4, 6)
+8
+
+Test #2: add one float and one integer
+
+>>> add_integer(2.5, 4)
+6
+
+Test #3: give only one parameter, integer
+
+>>> add_integer(5)
+103
+
+Test #4: give only one parameter, float
+
+>>> add_integer(2.5)
+100
+
+Test #5: add two float
+
+>>> add_integer(3.7, 1.2)
+4
+
+Test #6: add integer negative
+
+>>> add_integer(-3, -5)
+-8
+
+Test #7: Return type value
+
+>>> type(add_integer(5, 5))
+<class 'int'>
