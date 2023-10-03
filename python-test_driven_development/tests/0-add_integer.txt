@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
-"""
+    """
     Return the sum of a and b
 
     Examples:
@@ -8,7 +8,7 @@ def add_integer(a, b=98):
     3
     >>> add_integer(3, -1)
     2
-"""
+    """
 
     if not isinstance(a,  int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
