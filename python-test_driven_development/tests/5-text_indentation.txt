@@ -1,9 +1,16 @@
 #!/usr/bin/python3
-"""prints a text with 2 new lines after each of these characters: ., ? and :"""
-
-
 def text_indentation(text):
-    """Print text with two new line after . ? :"""
+    """
+    Print text with two new line after . ? :
+
+    Raises:
+    TypeError: If text is not a string.
+
+    Examples:
+    >>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo? Utrum igitur tibi?")
+    Lorem ipsum dolor sit amet.
+    """
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
