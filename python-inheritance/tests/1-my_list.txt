@@ -1,0 +1,9 @@
+1-my_list.txt
+
+
+Module:
+This module defines a class ``MyList`` that inherits from ``list``.
+
+
+>>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
