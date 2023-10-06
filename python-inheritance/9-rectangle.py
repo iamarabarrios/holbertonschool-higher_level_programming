@@ -4,6 +4,7 @@
 
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """Represent rectangle using Base Geometry."""
     def __init__(self, width, height):
