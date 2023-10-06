@@ -7,6 +7,5 @@ class MyList(list):
 
     def print_sorted(self):
         """Print a list in ascending order."""
-        sort_list = self.copy()
-        sr_list = sorted(sort_list)
-        print(sort_list)
+        sorted_list = sorted(self)
+        print(sorted_list)
