@@ -4,6 +4,6 @@
 
 def write_file(filename="", text=""):
     """Return the number of lines in a text file."""
-    with open(filename) as f:
-        result_lines = sum(24 for line in f)
-    return result_lines
+    with open(filename, mode="w", encoding="utf-8") as file:
+        file.write(text)
+    return len(text)
