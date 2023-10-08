@@ -1,6 +1,4 @@
-7-base_geometry.py
-
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+from 7-base_geometry import BaseGeometry
 
 bg = BaseGeometry()
 
@@ -35,4 +33,5 @@ try:
     bg.integer_validator("height", "not_an_integer")
     print("Validation for 'height' passed")
 except Exception as e:
-    print(f"Validation for 'height' failed: {e}")	
+    print(f"Validation for 'height' failed: {e}")
+
