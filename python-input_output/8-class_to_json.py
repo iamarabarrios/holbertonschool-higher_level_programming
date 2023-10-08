@@ -6,14 +6,5 @@ import json
 
 
 def class_to_json(obj):
-
-    if hasattr(obj, "__dict__"):
-        obj_dict = obj.__dict__
-        serializable_dict = {}
-
-        for key, value in obj_dict.items():
-            if isinstance(value, (list, dict, str, int, bool)):
-                serializable_dict[key] = value
-        return serializable_dict
-    else:
-        raise ValueError("Object is not serializable")
+    """Convert an instance of MyClass to a JSON serializable dictionary"""
+    return obj.__dict__
