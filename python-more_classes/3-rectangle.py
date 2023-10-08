@@ -35,10 +35,10 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
-        return ((self.__width * 2) +(self.__height * 2))
+        return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
@@ -50,4 +50,4 @@ class Rectangle:
             if i != self.__height - 1:
                 rectangle.append("\n")
 
-        return  ("".join(rectangle))
+        return ("".join(rectangle))
