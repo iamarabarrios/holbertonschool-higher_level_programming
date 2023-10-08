@@ -2,9 +2,8 @@
 """Defines a JSON file-reading function."""
 
 
-import json
-
-
 def class_to_json(obj):
-    """Convert an instance of MyClass to a JSON serializable dictionary"""
-    return obj.__dict__
+    """
+    Returns the dictionary description."""
+    return {key: value for key, value in obj.__dict__.items() if
+            isinstance(value, (list, dict, str, int, bool))}
