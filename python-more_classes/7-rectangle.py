@@ -12,7 +12,7 @@ class Rectangle:
 def __init__(self, width=0, height=0):
     """Initialize a new Rectangle."""
 
-    self.__class__.number_of_instances += 1
+    type(self).number_of_instances += 1
     self.width = width
     self.height = height
 
@@ -50,11 +50,10 @@ def __init__(self, width=0, height=0):
 
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return ("")
         rectangle = []
         for i in range(self.__height):
-            row = [str(self.print_symbol) for j in range(self.__width)]
-            rectangle.extend(row)
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 rectangle.append("\n")
         return ("".join(rectangle))
@@ -65,5 +64,5 @@ def __init__(self, width=0, height=0):
         return (rectangle)
 
     def __del__(self):
-        self.__class__.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
