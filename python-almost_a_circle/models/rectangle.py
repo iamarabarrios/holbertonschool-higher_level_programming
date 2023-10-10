@@ -2,10 +2,10 @@
 """Write the class Rectangle that inherits from Base."""
 
 
-from base import Base
+from .base import Base
 
 
-class Rectangle(base):
+class Rectangle(Base):
     """This is the rectangle class."""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new instance of the rectangle class."""
