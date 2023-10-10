@@ -36,3 +36,7 @@ class TestRectangle(unittest.TestCase):
     def test_invalid_rectangle_x_value(self):
         with self.assertRaises(ValueError):
             rectangle_instance = Rectangle(10, 20, -5)
+
+    def test_area(self):
+        rectangle_instance = Rectangle(10, 20)
+        self.assertEqual(rectangle_instance.area(), 200)
