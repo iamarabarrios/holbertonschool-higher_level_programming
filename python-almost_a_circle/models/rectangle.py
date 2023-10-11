@@ -100,3 +100,8 @@ class Rectangle(Base):
             for s in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """Actualize the class rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
