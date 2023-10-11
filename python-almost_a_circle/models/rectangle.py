@@ -114,7 +114,7 @@ class Rectangle(Base):
             for i in range(len(args)):
                 if i < len(attributes):
                     setattr(self, attributes[i], args[i])
-
+        else:
             for key, value in kwargs.items():
                 if key in attributes:
                     setattr(self, key, value)
