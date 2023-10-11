@@ -36,7 +36,7 @@ class TestRectangle(unittest.TestCase):
             rectangle_instance = Rectangle(10, 20, -5)
 
     def test_area(self):
-        """Try method area."""
+        """Try the method area."""
         rectangle_instance = Rectangle(10, 20)
         self.assertEqual(rectangle_instance.area(), 200)
 
