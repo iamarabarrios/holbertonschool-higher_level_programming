@@ -48,7 +48,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return instance with all attributes."""
+        """Return instance with all attributes"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
