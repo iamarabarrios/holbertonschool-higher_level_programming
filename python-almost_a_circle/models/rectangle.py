@@ -109,6 +109,12 @@ class Rectangle(Base):
     def update(self, *args):
         """Asigment attributes."""
         attributes = ["id", "width", "height", "x", "y"]
-        for i in range(len(args)):
-            if i < len(attributes):
-                setattr(self, attributes[i], args[i])
+
+        if args:
+            for i in range(len(args)):
+                if i < len(attributes):
+                    setattr(self, attributes[i], args[i])
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
