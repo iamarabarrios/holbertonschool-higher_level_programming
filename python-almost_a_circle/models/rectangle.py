@@ -95,11 +95,11 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """Print the rectangle in stdout using #."""
-        for i in range(self.__height):
-            for s in range(self.__width):
-                print("#", end="")
+        """Improve the print the rectangle in stdout using #."""
+        for _ in range(self.__y):
             print()
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """Actualize the class rectangle."""
