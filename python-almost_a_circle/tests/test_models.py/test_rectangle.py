@@ -63,3 +63,18 @@ class TestRectangle(unittest.TestCase):
 
     if __name__ == "__main__":
         unittest.main()
+
+    def test_display_with_xy(self):
+        """Try the methd display with x and y."""
+        rectangle_instance = Rectangle(4, 3, 1, 2)
+        expected_output = " \n \n####\n####\n####\n"
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            rectangle_instance.display()
+
+        output = mock_stdout.getvalue()
+
+        self.assertEqual(output, expected_output)
+
+    if __name__ == "__main__":
+        unittest.main()
