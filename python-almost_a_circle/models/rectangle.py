@@ -105,3 +105,10 @@ class Rectangle(Base):
         """Actualize the class rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """Asigment attributes."""
+        attributes = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            if i < len(attributes):
+                setattr(self, attributes[i], args[i])
