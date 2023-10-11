@@ -106,7 +106,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Asigment attributes."""
         attributes = ["id", "width", "height", "x", "y"]
 
