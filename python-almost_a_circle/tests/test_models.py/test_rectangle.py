@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """Tests for the Rectangle class."""
 
-from models.rectangle import Rectangle
 import unittest
+from unittest.mock import patch
+from models.rectangle import Rectangle
+
 
 class TestRectangle(unittest.TestCase):
     """Tests for the Rectangle class."""
-    
+
     def test_rectangle_constructor(self):
         rectangle_instance = Rectangle(10, 20)
         self.assertEqual(rectangle_instance.width, 10)
@@ -32,5 +34,16 @@ class TestRectangle(unittest.TestCase):
         rectangle_instance = Rectangle(10, 20)
         self.assertEqual(rectangle_instance.area(), 200)
 
-if __name__ == "__main__":
-    unittest.main()
+    if __name__ == "__main__":
+        unittest.main()
+
+    def test_display(self):
+        rectangle_instance = Rectangle(4, 3)
+        expected_output = "####\n####\n####\n"
+
+        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
+            rectangle_instance.display()
+
+        output = mock_stdout.getvalue()
+
+        self.assertEqual(output, expected_output)
