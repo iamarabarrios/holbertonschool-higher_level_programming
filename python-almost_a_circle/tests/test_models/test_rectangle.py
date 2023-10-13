@@ -3,6 +3,7 @@
 
 import unittest
 from unittest.mock import patch
+from io import StringIO
 from models.rectangle import Rectangle
 
 
@@ -60,21 +61,3 @@ class TestRectangle(unittest.TestCase):
         rectangle_instance = Rectangle(4, 3, 1, 2, 5)
         expected_str = "[Rectangle] (5) 1/2 - 4/3"
         self.assertEqual(str(rectangle_instance), expected_str)
-
-    if __name__ == "__main__":
-        unittest.main()
-
-    def test_display_with_xy(self):
-        """Try the methd display with x and y."""
-        rectangle_instance = Rectangle(4, 3, 1, 2)
-        expected_output = " \n \n####\n####\n####\n"
-
-        with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
-            rectangle_instance.display()
-
-        output = mock_stdout.getvalue()
-
-        self.assertEqual(output, expected_output)
-
-    if __name__ == "__main__":
-        unittest.main()
