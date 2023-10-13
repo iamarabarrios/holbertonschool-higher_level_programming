@@ -16,3 +16,11 @@ class TestBase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def testToJSONString(self):
+        data = [{"id": 1, "name": "Object1"}, {"id": 2, "name": "Object2"}]
+        json_str = Base.to_json_string(data)
+        expected_json = (
+            '[{"id": 1, "name": "Object1"}, {"id": 2, "name": "Object2"}]'
+        )
+        self.assertEqual(json_str, expected_json)
