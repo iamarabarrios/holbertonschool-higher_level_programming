@@ -50,3 +50,13 @@ class TestSquare(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_area(self):
+        """Test ares calculate."""
+        square = Square(4)
+        self.assertEqual(square.area(), 16)
+
+    def test_perimeter(self):
+        """Test perimeter calculate."""
+        square = Square(4)
+        self.assertEqual(square.perimeter(), 16)
