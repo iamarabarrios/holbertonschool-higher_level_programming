@@ -61,3 +61,10 @@ class TestRectangle(unittest.TestCase):
         rectangle_instance = Rectangle(4, 3, 1, 2, 5)
         expected_str = "[Rectangle] (5) 1/2 - 4/3"
         self.assertEqual(str(rectangle_instance), expected_str)
+
+    def test_to_dictionary_method(self):
+        """Test dictionary."""
+        rectangle = Rectangle(4, 3, 1, 2, 5)
+        rectangle_dict = rectangle.to_dictionary()
+        expected_dict = {"id": 5, "width": 4, "height": 3, "x": 1, "y": 2}
+        self.assertEqual(rectangle_dict, expected_dict)
