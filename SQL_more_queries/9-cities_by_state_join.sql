@@ -1,4 +1,4 @@
--- Lists  all cities contained in the database hbtn_0d_usa.
+-- Lists all cities in the hbtn_0d_usa database.
 USE hbtn_0d_usa;
 SELECT cities.id, cities.name, states.name
 FROM cities
