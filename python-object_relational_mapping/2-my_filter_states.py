@@ -8,13 +8,6 @@ from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
-    if len(argv) != 5:
-        print(
-            "Usage: {} username password database state_name"
-            .format(argv[0])
-        )
-        exit(1)
-
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
