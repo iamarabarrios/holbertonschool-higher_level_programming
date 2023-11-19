@@ -1,26 +1,19 @@
 #!/usr/bin/python3
-"""Model state."""
+"""Model state"""
 
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
 class State(Base):
-    """Implementation the state class"""
+    """
+    Table states:
+        id = INT, NOT NULL, PK
+        name = CHAR(128), NOT NULL
+    """
 
-    __tablename__ = "states"
-
-    id = Column(
-        Integer,
-        primary_key=True,
-        autoincrement=True,
-        unique=True,
-        nullable=False
-    )
-
-    name = Column(
-        String(128),
-        nullable=False
-    )
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, nullable=False)
+    name = Column(String(128), nullable=False)
