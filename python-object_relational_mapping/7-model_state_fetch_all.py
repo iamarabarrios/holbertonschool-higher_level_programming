@@ -7,7 +7,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
-
     user = argv[1]
     passwd = argv[2]
     database = argv[3]
