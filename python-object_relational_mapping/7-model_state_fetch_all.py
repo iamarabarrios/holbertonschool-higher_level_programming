@@ -1,23 +1,23 @@
 #!/usr/bin/python3
-"""All states via SQLAlchemy."""
+"""Model state."""
 
-import sys
-from sqlalchemy import create_engine, func
-from sqlalchemy.orm import sessionmaker
+from sys import argv
 from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
-    """Main function."""
 
-    conn = 'mysql+mysqldb://{}:{}@localhost/{}'
-    engine = create_engine(conn.format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    user = argv[1]
+    passwd = argv[2]
+    database = argv[3]
 
-    states = (session.query(State, func.row_number()
-                            .over(order_by=State.id)
-                            .label('row_number'))
-                            .all())
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
+                           format(user, passwd, database), pool_pre_ping=True)
 
-    for row in states:
-        print(f"{row.row_number}: {row.State.name}")
+    session = Session(engine)
+
+    for row in session.query(State).order_by(State.id):
+        print("{}: {}".format(row.id, row.name))
+
+    session.close()
