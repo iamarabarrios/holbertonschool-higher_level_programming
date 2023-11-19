@@ -1,30 +1,25 @@
 #!/usr/bin/python3
-"""Lists all cities from the database hbtn_0e_4_usa."""
+"""Model state."""
 
-from sys import argv
-import MySQLdb
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
 
-if __name__ == "__main__":
-    with MySQLdb.connect(
-            host="localhost",
-            user=argv[1],
-            passwd=argv[2],
-            database=argv[3]) as database:
+Base = declarative_base()
 
-        cursor = database.cursor()
+class State(Base):
+    """Implementation the state class"""
 
-        query = (
-            "SELECT cities.id, cities.name, states.name "
-            "FROM cities "
-            "INNER JOIN states ON cities.state_id = states.id "
-            "ORDER BY cities.id ASC;"
-        )
+    __tablename__ = "states"
 
-        cursor.execute(query)
+    id = Column(
+        Integer,
+        primary_key=True,
+        autoincrement=True,
+        unique=True,
+        nullable=False
+    )
 
-        elems = cursor.fetchall()
-
-        for elem in elems:
-            print(elem)
-
-        cursor.close()
+    name = Column(
+        String(128),
+        nullable=False
+    )
